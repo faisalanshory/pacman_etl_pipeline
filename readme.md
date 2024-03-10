@@ -75,5 +75,5 @@
 <ul>
   <li>Table sales data</li>
   <li>Table marketing data</li>
-  <li>Table indo region data</li>
+  <li>Table indo journal data</li>
 </ul>
