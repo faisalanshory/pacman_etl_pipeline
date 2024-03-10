@@ -12,7 +12,7 @@ echo "Start Luigi ETL Pipeline Process"
 PYTHON_SCRIPT="./etl_luigi.py"
 
 # run python script
-python3 "$PYTHON_SCRIPT" >> ./log/logfile.log 2>&1
+python "$PYTHON_SCRIPT" >> ./log/logfile.log 2>&1
 
 # logging simple
 dt=$(date '+%d/%m/%Y %H:%M:%S');
