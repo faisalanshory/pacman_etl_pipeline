@@ -12,8 +12,8 @@ source "$VENV_PATH"
 PYTHON_SCRIPT="./etl_luigi.py"
 
 # run python script
-python pip install -r requirements.txt
-python "$PYTHON_SCRIPT" >> ./log/logfile.log 2>&1
+python3 pip install -r requirements.txt
+python3 "$PYTHON_SCRIPT" >> ./log/logfile.log 2>&1
 
 # logging simple
 dt=$(date '+%d/%m/%Y %H:%M:%S');
