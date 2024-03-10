@@ -55,8 +55,23 @@
   <p>Test</p>
 </ul>
 <h3>How To Use It</h3>
-![Image Output]([https://github.com/your_username/your_repository/raw/main/image.png](https://github.com/faisalanshory/pacman_etl_pipeline/blob/main/img/pipeline.jpg))
+- Extract sales_data from docker
+
+    ```bash
+    $ docker pull shandytp/amazon-sales-data-docker-db
+    $ docker run -d -p 5555:5555 --name etl_test_extract shandytp/amazon-sales-data-docker-db:latest
+    ```
+
+- Make a database for the database output
+
+    ```bash
+    $ cd data-warehouse
+    $ docker compose up -d
+    ```
+<img src="https://github.com/faisalanshory/pacman_etl_pipeline/blob/main/img/pipeline.jpg" alt="Pipeline">
 <h3>Output</h3>
+
+
 <ul>
   <li>Table sales data</li>
   <li>Table marketing data</li>
