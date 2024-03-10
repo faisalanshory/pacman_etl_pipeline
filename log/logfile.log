@@ -1,1 +1,214 @@
-run_etl.sh: line 15: python3: command not found
+DEBUG: Checking if ExtractSalesData() is complete
+WARNING: Failed connecting to remote scheduler 'http://localhost:8082'
+NoneType: None
+INFO: Retrying attempt 2 of 3 (max)
+INFO: Wait for 30 seconds
+WARNING: Failed connecting to remote scheduler 'http://localhost:8082'
+NoneType: None
+INFO: Retrying attempt 2 of 3 (max)
+INFO: Wait for 30 seconds
+WARNING: Failed connecting to remote scheduler 'http://localhost:8082'
+NoneType: None
+INFO: Retrying attempt 3 of 3 (max)
+INFO: Wait for 30 seconds
+WARNING: Failed connecting to remote scheduler 'http://localhost:8082'
+NoneType: None
+INFO: Retrying attempt 3 of 3 (max)
+INFO: Wait for 30 seconds
+WARNING: Failed connecting to remote scheduler 'http://localhost:8082'
+NoneType: None
+INFO: Retrying attempt 4 of 3 (max)
+INFO: Wait for 30 seconds
+ERROR: Luigi unexpected framework error while scheduling ExtractSalesData()
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000020908C7F820>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8082): Max retries exceeded with url: /api/add_task (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020908C7F820>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 185, in _fetch
+    response = scheduler_retry(self._fetcher.fetch, full_url, body, self._connect_timeout)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\_base.py", line 432, in result
+    return self.__get_result()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\_base.py", line 388, in __get_result
+    raise self._exception
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 131, in fetch
+    resp = self.session.post(full_url, data=body, timeout=timeout)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 635, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8082): Max retries exceeded with url: /api/add_task (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020908C7F820>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\worker.py", line 806, in add
+    for next in self._add(item, is_complete):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\worker.py", line 911, in _add
+    self._add_task(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\worker.py", line 635, in _add_task
+    self._scheduler.add_task(*args, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\scheduler.py", line 114, in rpc_func
+    return self._request('/api/{}'.format(fn_name), actual_args, **request_args)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 198, in _request
+    page = self._fetch(url, body)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 187, in _fetch
+    raise RPCError(
+luigi.rpc.RPCError: Errors (3 attempts) when connecting to remote scheduler 'http://localhost:8082'
+WARNING: Failed connecting to remote scheduler 'http://localhost:8082'
+NoneType: None
+INFO: Retrying attempt 4 of 3 (max)
+INFO: Wait for 30 seconds
+WARNING: Failed pinging scheduler
+INFO: Worker Worker(salt=4305109119, workers=1, host=LAPTOP-QT8P5FKO, username=Faisal, pid=27520) was stopped. Shutting down Keep-Alive thread
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\http\client.py", line 944, in send
+    self.connect()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000020908C7F820>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8082): Max retries exceeded with url: /api/add_task (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020908C7F820>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 185, in _fetch
+    response = scheduler_retry(self._fetcher.fetch, full_url, body, self._connect_timeout)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 379, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\_base.py", line 432, in result
+    return self.__get_result()
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\concurrent\futures\_base.py", line 388, in __get_result
+    raise self._exception
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\tenacity\__init__.py", line 382, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 131, in fetch
+    resp = self.session.post(full_url, data=body, timeout=timeout)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 635, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\requests\adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8082): Max retries exceeded with url: /api/add_task (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020908C7F820>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./etl_luigi.py", line 366, in <module>
+    luigi.build([ExtractSalesData(),
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\interface.py", line 243, in build
+    luigi_run_result = _schedule_and_run(tasks, worker_scheduler_factory, override_defaults=env_params)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\interface.py", line 175, in _schedule_and_run
+    success &= worker.add(t, env_params.parallel_scheduling, env_params.parallel_scheduling_processes)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\worker.py", line 806, in add
+    for next in self._add(item, is_complete):
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\worker.py", line 911, in _add
+    self._add_task(
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\worker.py", line 635, in _add_task
+    self._scheduler.add_task(*args, **kwargs)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\scheduler.py", line 114, in rpc_func
+    return self._request('/api/{}'.format(fn_name), actual_args, **request_args)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 198, in _request
+    page = self._fetch(url, body)
+  File "C:\Users\faisa\AppData\Local\Programs\Python\Python38\lib\site-packages\luigi\rpc.py", line 187, in _fetch
+    raise RPCError(
+luigi.rpc.RPCError: Errors (3 attempts) when connecting to remote scheduler 'http://localhost:8082'

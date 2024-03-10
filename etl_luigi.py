@@ -12,13 +12,13 @@ from pangres import upsert
 SOURCE_DB_USERNAME = 'postgres'
 SOURCE_DB_PASSWORD = 'password123'
 SOURCE_DB_HOST = 'localhost'
-SOURCE_DB_PORT = '5555'
+SOURCE_DB_PORT = '8082'
 SOURCE_DB_NAME = 'etl_test_extract'
 
 WAREHOUSE_DB_USERNAME = 'postgres'
 WAREHOUSE_DB_PASSWORD = 'password123'
 WAREHOUSE_DB_HOST = 'localhost'
-WAREHOUSE_DB_PORT = '5434'
+WAREHOUSE_DB_PORT = '8082'
 WAREHOUSE_DB_NAME = 'etl_test_result'
 
 class ExtractSalesData(luigi.Task):
